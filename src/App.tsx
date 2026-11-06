@@ -29,7 +29,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-800 antialiased">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-800 antialiased overflow-x-hidden w-full max-w-full">
       {/* Sticky Top Header & Utility Bar */}
       <Header
         onOpenAppointment={handleOpenAppointment}

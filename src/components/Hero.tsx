@@ -20,9 +20,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAppointment }) => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Trust Badges */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-950/80 border border-teal-500/40 text-teal-300 text-xs sm:text-sm font-medium backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-              <span>Tedhi Pulia, Ring Road • North Lucknow’s Trusted Healthcare Hub</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-950/80 border border-teal-500/40 text-teal-300 text-[11px] sm:text-xs font-medium backdrop-blur-md max-w-full">
+              <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse shrink-0"></span>
+              <span className="truncate">Tedhi Pulia, Ring Road • North Lucknow’s Trusted Hospital</span>
             </div>
 
             {/* Main H1 for Local SEO */}

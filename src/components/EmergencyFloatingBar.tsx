@@ -8,8 +8,8 @@ interface EmergencyFloatingBarProps {
 
 export const EmergencyFloatingBar: React.FC<EmergencyFloatingBarProps> = ({ onOpenAppointment }) => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-2 sm:p-3 shadow-2xl lg:hidden">
-      <div className="max-w-md mx-auto grid grid-cols-3 gap-2">
+    <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-2 sm:p-3 shadow-2xl lg:hidden w-full max-w-full overflow-hidden">
+      <div className="max-w-md mx-auto grid grid-cols-3 gap-2 w-full">
         
         {/* Call Emergency Helpline */}
         <a
