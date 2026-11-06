@@ -1,0 +1,8 @@
+# Robots.txt for NEO Hospital - Superspeciality Hospital & Cancer Center Lucknow
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://neohospital.in/sitemap.xml
