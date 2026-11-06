@@ -57,8 +57,10 @@ export const HOSPITAL_INFO = {
   },
   emergencyHours: "24 Hours / 7 Days (Round-the-Clock Critical Care & Ambulance)",
   opdHours: "Monday – Saturday: 9:00 AM – 8:00 PM | Sunday: 10:00 AM – 2:00 PM",
-  email: "care@neohospital.in",
-  emergencyEmail: "emergency@neohospital.in"
+  domain: "neohospitallucknow.com",
+  websiteUrl: "https://neohospitallucknow.com",
+  email: "care@neohospitallucknow.com",
+  emergencyEmail: "emergency@neohospitallucknow.com"
 };
 
 // All 15 Facilities exactly matching the official Hospital Facility Board

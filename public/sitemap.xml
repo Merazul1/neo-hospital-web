@@ -5,7 +5,7 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Homepage -->
   <url>
-    <loc>https://neohospital.in/</loc>
+    <loc>https://neohospitallucknow.com/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -13,37 +13,37 @@
 
   <!-- Pillar Hub Pages -->
   <url>
-    <loc>https://neohospital.in/cancer-center</loc>
+    <loc>https://neohospitallucknow.com/cancer-center</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/critical-care</loc>
+    <loc>https://neohospitallucknow.com/critical-care</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties</loc>
+    <loc>https://neohospitallucknow.com/specialties</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/doctors</loc>
+    <loc>https://neohospitallucknow.com/doctors</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/patient-guide</loc>
+    <loc>https://neohospitallucknow.com/patient-guide</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/contact</loc>
+    <loc>https://neohospitallucknow.com/contact</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -51,73 +51,73 @@
 
   <!-- High-Intent Specialty Cluster Routing -->
   <url>
-    <loc>https://neohospital.in/cancer-care/chemotherapy-lucknow</loc>
+    <loc>https://neohospitallucknow.com/cancer-care/chemotherapy-lucknow</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/cancer-care/surgical-oncology</loc>
+    <loc>https://neohospitallucknow.com/cancer-care/surgical-oncology</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/orthopedics-joint-replacement</loc>
+    <loc>https://neohospitallucknow.com/specialties/orthopedics-joint-replacement</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/laparoscopic-surgery</loc>
+    <loc>https://neohospitallucknow.com/specialties/laparoscopic-surgery</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/critical-care/icu-nicu-lucknow</loc>
+    <loc>https://neohospitallucknow.com/critical-care/icu-nicu-lucknow</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/uro-surgery</loc>
+    <loc>https://neohospitallucknow.com/specialties/uro-surgery</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/neuro-surgery</loc>
+    <loc>https://neohospitallucknow.com/specialties/neuro-surgery</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/gastro-surgery</loc>
+    <loc>https://neohospitallucknow.com/specialties/gastro-surgery</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/pediatrics</loc>
+    <loc>https://neohospitallucknow.com/specialties/pediatrics</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/plastic-surgery</loc>
+    <loc>https://neohospitallucknow.com/specialties/plastic-surgery</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/ent</loc>
+    <loc>https://neohospitallucknow.com/specialties/ent</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/specialties/dental-surgery</loc>
+    <loc>https://neohospitallucknow.com/specialties/dental-surgery</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -125,25 +125,25 @@
 
   <!-- Local Catchment Silo Pages -->
   <url>
-    <loc>https://neohospital.in/locations/tedhi-pulia-ring-road</loc>
+    <loc>https://neohospitallucknow.com/locations/tedhi-pulia-ring-road</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/locations/aliganj-lucknow</loc>
+    <loc>https://neohospitallucknow.com/locations/aliganj-lucknow</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/locations/jankipuram-lucknow</loc>
+    <loc>https://neohospitallucknow.com/locations/jankipuram-lucknow</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neohospital.in/locations/vikas-nagar-lucknow</loc>
+    <loc>https://neohospitallucknow.com/locations/vikas-nagar-lucknow</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>

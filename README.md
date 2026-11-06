@@ -16,6 +16,7 @@ Production web application, local medical SEO strategy, structured JSON-LD schem
 
 * **Hospital Name:** NEO Hospital  
 * **Designation:** Superspeciality Hospital & Cancer Center  
+* **Official Domain:** [https://neohospitallucknow.com](https://neohospitallucknow.com)  
 * **Tagline:** *"A better place to get better"*  
 * **24/7 Helpline & Emergency:** `+91-9919722223`  
 * **Address:** 3, Pratap Nagar, Tedhi Pulia, Ring Road, Lucknow, Uttar Pradesh – 226022  
