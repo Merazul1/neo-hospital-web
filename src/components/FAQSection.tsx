@@ -15,28 +15,8 @@ export const FAQSection: React.FC = () => {
     return item.category === filterCategory;
   });
 
-  // Prepare FAQPage schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": FAQ_DATA.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
-
   return (
     <section id="faqs" className="py-16 sm:py-24 bg-slate-50 relative">
-      {/* FAQ Schema Script */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}

@@ -5,4 +5,4 @@ Disallow: /admin/
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://neohospitallucknow.com/sitemap.xml
+Sitemap: https://www.neohospitallucknow.com/sitemap.xml

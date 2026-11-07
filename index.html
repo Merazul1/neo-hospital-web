@@ -13,7 +13,7 @@
     <meta name="author" content="NEO Hospital Lucknow" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="google-site-verification" content="O1LDCOHtFqrGOJIgbEKWCuQDrWYJBm-KH_tLNQFUc60" />
-    <link rel="canonical" href="https://neohospitallucknow.com/" />
+    <link rel="canonical" href="https://www.neohospitallucknow.com/" />
 
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="IN-UP" />
@@ -23,19 +23,19 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="hospital" />
-    <meta property="og:url" content="https://neohospitallucknow.com/" />
+    <meta property="og:url" content="https://www.neohospitallucknow.com/" />
     <meta property="og:title" content="NEO Hospital - Superspeciality Hospital & Cancer Center, Lucknow" />
     <meta property="og:description" content="A better place to get better. 24/7 ICU, NICU, Advanced Ventilator, Chemotherapy, Surgical Oncology, Orthopedic Joint Replacement & Laparoscopic Surgery. Helpline: 9919722223." />
-    <meta property="og:image" content="/images/neo-building-night.jpg" />
+    <meta property="og:image" content="https://www.neohospitallucknow.com/images/neo-building-night.jpg" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="NEO Hospital Lucknow" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://neohospitallucknow.com/" />
+    <meta property="twitter:url" content="https://www.neohospitallucknow.com/" />
     <meta property="twitter:title" content="NEO Hospital Lucknow | Superspeciality Hospital & Cancer Center" />
     <meta property="twitter:description" content="Emergency ICU, NICU, Cancer Surgery, Chemotherapy, Orthopedics & Laparoscopy at Tedhi Pulia Ring Road, Lucknow. Call 9919722223." />
-    <meta property="twitter:image" content="/images/neo-building-night.jpg" />
+    <meta property="twitter:image" content="https://www.neohospitallucknow.com/images/neo-building-night.jpg" />
 
     <link rel="icon" type="image/png" href="/images/neo-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,144 +49,233 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Hospital", "MedicalBusiness", "EmergencyService"],
-      "@id": "https://neohospitallucknow.com/#hospital",
-      "name": "NEO Hospital - Superspeciality Hospital & Cancer Center",
-      "alternateName": ["NEO Hospital Lucknow", "Neo Hospital Tedhi Pulia"],
-      "slogan": "A better place to get better",
-      "url": "https://neohospitallucknow.com/",
-      "logo": "https://neohospitallucknow.com/images/neo-logo.png",
-      "image": [
-        "https://neohospitallucknow.com/images/neo-building-night.jpg",
-        "https://neohospitallucknow.com/images/neo-facilities-board.jpg",
-        "https://neohospitallucknow.com/images/neo-surgery-ortho.jpg"
-      ],
-      "telephone": "+91-9919722223",
-      "emergencyTelephone": "+91-9919722223",
-      "priceRange": "₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "3, Pratap Nagar, Tedhi Pulia, Ring Road",
-        "addressLocality": "Lucknow",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "226022",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 26.9064,
-        "longitude": 80.9572
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          "@type": "Hospital",
+          "@id": "https://www.neohospitallucknow.com/#hospital",
+          "name": "NEO Hospital - Superspeciality Hospital & Cancer Center",
+          "alternateName": ["NEO Hospital Lucknow", "Neo Hospital Tedhi Pulia"],
+          "slogan": "A better place to get better",
+          "url": "https://www.neohospitallucknow.com/",
+          "logo": "https://www.neohospitallucknow.com/images/neo-logo.png",
+          "image": [
+            "https://www.neohospitallucknow.com/images/neo-building-night.jpg",
+            "https://www.neohospitallucknow.com/images/neo-facilities-board.jpg",
+            "https://www.neohospitallucknow.com/images/neo-surgery-ortho.jpg",
+            "https://www.neohospitallucknow.com/images/neo-poster-full.jpg"
           ],
-          "opens": "00:00",
-          "closes": "23:59",
-          "description": "24/7 Emergency, ICU, NICU, Trauma & Ambulance Services"
-        }
-      ],
-      "department": [
-        {
-          "@type": "MedicalOrganization",
-          "name": "Cancer Center & Surgical Oncology",
-          "description": "Comprehensive Cancer Surgery, Chemotherapy Daycare, and Multidisciplinary Tumor Care."
+          "telephone": "+91-9919722223",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+91-9919722223",
+              "contactType": "emergency",
+              "availableLanguage": ["Hindi", "English"],
+              "areaServed": "IN"
+            }
+          ],
+          "priceRange": "₹₹",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3, Pratap Nagar, Tedhi Pulia, Ring Road",
+            "addressLocality": "Lucknow",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "226022",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 26.9064,
+            "longitude": 80.9572
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ],
+          "department": [
+            {
+              "@type": "MedicalOrganization",
+              "name": "Cancer Center & Surgical Oncology",
+              "description": "Comprehensive Cancer Surgery, Chemotherapy Daycare, and Multidisciplinary Tumor Care."
+            },
+            {
+              "@type": "MedicalOrganization",
+              "name": "Critical Care Unit (ICU & NICU)",
+              "description": "Advanced Ventilator Support, Neonatal ICU, and Multi-Para Hemodynamic Monitoring."
+            },
+            {
+              "@type": "MedicalOrganization",
+              "name": "Orthopedics & Joint Replacement",
+              "description": "Trauma, Hip Replacement, Knee Replacement, and C-ARM Fluoroscopy Guided Procedures."
+            },
+            {
+              "@type": "MedicalOrganization",
+              "name": "Advanced Laparoscopic Surgery (दूरबीन द्वारा आपरेशन)",
+              "description": "Minimally Invasive Abdominal, Gallbladder, Hernia, and Gastrointestinal Surgeries."
+            },
+            {
+              "@type": "MedicalOrganization",
+              "name": "Neuro Surgery & Neurology",
+              "description": "Emergency Head Trauma, Craniotomy, Brain Tumor, Stroke & Spine Surgery."
+            }
+          ],
+          "medicalSpecialty": [
+            "https://schema.org/Oncology",
+            "https://schema.org/Surgical",
+            "https://schema.org/Pediatric",
+            "https://schema.org/Gastroenterology",
+            "https://schema.org/Urology",
+            "https://schema.org/Otolaryngology",
+            "https://schema.org/Neurology",
+            "https://schema.org/Renal"
+          ],
+          "availableService": [
+            {
+              "@type": "MedicalProcedure",
+              "name": "Chemotherapy (कीमोथेरेपी)",
+              "description": "Daycare chemotherapy infusion under sterile biosafety laminar airflow."
+            },
+            {
+              "@type": "MedicalProcedure",
+              "name": "Cancer Surgery (कैंसर सर्जरी)",
+              "description": "Surgical resection of breast, oral, thoracic, and GI malignancies."
+            },
+            {
+              "@type": "MedicalProcedure",
+              "name": "Orthopedic & Joint Replacement Surgery (आर्थोपेडिक सर्जरी)",
+              "description": "Total Knee (TKR) and Total Hip (THR) Replacement with C-ARM guidance."
+            },
+            {
+              "@type": "MedicalProcedure",
+              "name": "Laparoscopic Surgery (दूरबीन द्वारा आपरेशन)",
+              "description": "Keyhole surgeries for gallbladder stones, appendix, and hernia."
+            },
+            {
+              "@type": "MedicalProcedure",
+              "name": "Intensive Care Unit & Ventilator (आई.सी.यू. एवं वेंटीलेटर)",
+              "description": "24/7 invasive and non-invasive mechanical ventilator support."
+            },
+            {
+              "@type": "MedicalProcedure",
+              "name": "Neonatal Intensive Care Unit (एन.आई.सी.यू.)",
+              "description": "Level-III newborn incubator and phototherapy care."
+            }
+          ],
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Tedhi Pulia, Lucknow"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Ring Road, Lucknow"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Aliganj, Lucknow"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Jankipuram, Lucknow"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Vikas Nagar, Lucknow"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Kalyanpur, Lucknow"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Kursi Road, Lucknow"
+            }
+          ]
         },
         {
-          "@type": "MedicalOrganization",
-          "name": "Critical Care Unit (ICU & NICU)",
-          "description": "Advanced Ventilator Support, Neonatal ICU, and Multi-Para Hemodynamic Monitoring."
-        },
-        {
-          "@type": "MedicalOrganization",
-          "name": "Orthopedics & Joint Replacement",
-          "description": "Trauma, Hip Replacement, Knee Replacement, and C-ARM Fluoroscopy Guided Procedures."
-        },
-        {
-          "@type": "MedicalOrganization",
-          "name": "Advanced Laparoscopic Surgery (दूरबीन द्वारा आपरेशन)",
-          "description": "Minimally Invasive Abdominal, Gallbladder, Hernia, and Gastrointestinal Surgeries."
-        }
-      ],
-      "medicalSpecialty": [
-        "https://schema.org/Oncologic",
-        "https://schema.org/Surgical",
-        "https://schema.org/Emergency",
-        "https://schema.org/Pediatric",
-        "https://schema.org/Gastroenterologic",
-        "https://schema.org/Urologic",
-        "https://schema.org/Otolaryngologic",
-        "https://schema.org/Dentistry"
-      ],
-      "availableService": [
-        {
-          "@type": "MedicalProcedure",
-          "name": "Chemotherapy (कीमोथेरेपी)",
-          "procedureType": "https://schema.org/PercutaneousProcedure"
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "Cancer Surgery (कैंसर सर्जरी)",
-          "procedureType": "https://schema.org/SurgicalProcedure"
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "Orthopedic & Joint Replacement Surgery (आर्थोपेडिक सर्जरी)",
-          "procedureType": "https://schema.org/SurgicalProcedure"
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "Laparoscopic Surgery (दूरबीन द्वारा आपरेशन)",
-          "procedureType": "https://schema.org/SurgicalProcedure"
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "Intensive Care Unit & Ventilator (आई.सी.यू. एवं वेंटीलेटर)",
-          "procedureType": "https://schema.org/TherapeuticProcedure"
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "Neonatal Intensive Care Unit (एन.आई.सी.यू.)",
-          "procedureType": "https://schema.org/TherapeuticProcedure"
-        }
-      ],
-      "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "Tedhi Pulia, Lucknow"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Ring Road, Lucknow"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Aliganj, Lucknow"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Jankipuram, Lucknow"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Vikas Nagar, Lucknow"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Kalyanpur, Lucknow"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Kursi Road, Lucknow"
+          "@type": "FAQPage",
+          "@id": "https://www.neohospitallucknow.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Where is NEO Hospital located in Lucknow and how can I reach in an emergency?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "NEO Hospital is located at 3, Pratap Nagar, Tedhi Pulia, Ring Road, Lucknow – 226022. It is easily accessible from Tedhi Pulia Chauraha, Aliganj, Jankipuram, and Vikas Nagar via the broad Ring Road corridor. For immediate ambulance dispatch and emergency bed reservation, call our 24/7 Helpline: 9919722223."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you have round-the-clock ICU, NICU, and Ventilator bed availability?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. NEO Hospital operates a full-scale tertiary Intensive Care Unit (ICU) and Level-III Neonatal Intensive Care Unit (NICU) with advanced invasive and non-invasive mechanical ventilators. Dedicated intensivists, pediatric specialists, and critical care nurses are on duty 24 hours a day, 365 days a year."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What cancer treatments and chemotherapy facilities are provided?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our Cancer Center offers comprehensive Surgical Oncology and a dedicated Chemotherapy Daycare Unit. We handle breast cancer, gastrointestinal cancers, head and neck malignancies, and gynecological cancers. Chemotherapy is administered under biosafety laminar airflow standards with chemoport management and minimal-nausea protocols."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Cashless TPA and Mediclaim Insurance accepted at NEO Hospital?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, NEO Hospital partners with major TPA and private health insurance providers (Star Health, ICICI Lombard, HDFC ERGO, Care Health, Niva Bupa, Bajaj Allianz, and PSU insurers). Our Cashless TPA Helpdesk assists patients and families with fast pre-authorization, admission paperwork, and claim processing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What advanced surgical procedures are performed with C-ARM and Laparoscopy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We perform minimally invasive Laparoscopic Surgeries (दूरबीन द्वारा आपरेशन) for gallbladder stones, appendix, and hernias, allowing 24-hour discharge. For Orthopedics, our modular theater is equipped with an advanced C-ARM Image Intensifier for high-precision Joint Replacements (Total Knee & Hip) and trauma fracture fixations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the visiting hours for ICU and inpatient wards?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "General Ward visiting hours are from 11:00 AM – 1:00 PM in the morning and 5:00 PM – 7:00 PM in the evening. For ICU and NICU, visiting is restricted to 1 designated attendant between 12:00 PM – 1:00 PM and 6:00 PM – 7:00 PM to maintain strict sterility and infection control."
+              }
+            }
+          ]
         }
       ]
     }
     </script>
   </head>
   <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-500 selection:text-white overflow-x-hidden w-full max-w-full">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fallback static semantic content for SEO crawlers before JS hydration -->
+      <header class="sr-only">
+        <h1>NEO Hospital Lucknow | Superspeciality Hospital &amp; Cancer Center</h1>
+        <p>A better place to get better — 24/7 Emergency &amp; Trauma, ICU, NICU, Advanced Ventilator Support, Chemotherapy Daycare, Surgical Oncology, Orthopedic Joint Replacement &amp; Laparoscopic Surgery at 3, Pratap Nagar, Tedhi Pulia, Ring Road, Lucknow – 226022. Helpline: 9919722223.</p>
+        <nav aria-label="Main Navigation">
+          <a href="#facilities">Hospital Facilities &amp; Clinical Departments</a>
+          <a href="#cancer-center">Cancer Center &amp; Chemotherapy</a>
+          <a href="#critical-care">24/7 Critical Care &amp; Ventilator ICU</a>
+          <a href="#surgeries">Joint Replacement &amp; Laparoscopic Surgeries</a>
+          <a href="#doctors">Board-Certified Doctors &amp; OPD Schedule</a>
+          <a href="#gallery">Hospital Photo Gallery &amp; Campus Tour</a>
+          <a href="#catchment">North Lucknow Catchment Coverage</a>
+          <a href="#patient-guide">Cashless TPA Empanelment &amp; Visitor Guide</a>
+          <a href="#contact">Emergency Contact &amp; Google Map Directions</a>
+          <a href="#faqs">Frequently Asked Questions</a>
+        </nav>
+      </header>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
