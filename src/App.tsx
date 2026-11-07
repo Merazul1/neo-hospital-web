@@ -6,6 +6,7 @@ import { CancerCenterPillar } from './components/CancerCenterPillar';
 import { CriticalCareSection } from './components/CriticalCareSection';
 import { OrthopedicShowcase } from './components/OrthopedicShowcase';
 import { DoctorRoster } from './components/DoctorRoster';
+import { PhotoGallery } from './components/PhotoGallery';
 import { LocalCatchmentSilo } from './components/LocalCatchmentSilo';
 import { PatientGuideAndTPA } from './components/PatientGuideAndTPA';
 import { LocationAndMap } from './components/LocationAndMap';
@@ -56,6 +57,9 @@ export const App: React.FC = () => {
 
         {/* Doctor Roster & Board-Certified Specialists */}
         <DoctorRoster onOpenAppointment={handleOpenAppointment} />
+
+        {/* Hospital Photo Gallery & Facilities Visual Tour */}
+        <PhotoGallery onOpenAppointment={handleOpenAppointment} />
 
         {/* Local Landing Silo: Tedhi Pulia, Ring Road, Aliganj, Jankipuram Catchment */}
         <LocalCatchmentSilo />

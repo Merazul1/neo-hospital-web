@@ -104,6 +104,8 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} NEO Hospital. All Rights Reserved. Superspeciality Hospital &amp; Cancer Center, Lucknow.
           </div>
           <div className="flex items-center gap-4 text-slate-400 text-[11px]">
+            <a href="#gallery" className="hover:text-teal-400 transition">Hospital Photo Gallery</a>
+            <span>•</span>
             <span>Privacy Policy</span>
             <span>•</span>
             <span>Patient Charter</span>

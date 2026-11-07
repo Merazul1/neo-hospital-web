@@ -234,6 +234,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
               Doctors &amp; OPD
             </a>
 
+            {/* Photo Gallery */}
+            <a
+              href="#gallery"
+              onClick={() => handleNavClick('gallery')}
+              className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
+                activeSection === 'gallery'
+                  ? 'text-teal-700 bg-teal-50'
+                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-50'
+              }`}
+            >
+              Photo Gallery
+            </a>
+
             {/* Patient Guide & TPA */}
             <a
               href="#patient-guide"
@@ -328,6 +341,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
               { label: "Critical Care (ICU / NICU / वेंटीलेटर)", href: "#critical-care", id: "critical-care", badge: "24/7" },
               { label: "Surgeries & Joint Replacement (दूरबीन आपरेशन)", href: "#surgeries", id: "surgeries" },
               { label: "Doctors & OPD Schedule", href: "#doctors", id: "doctors" },
+              { label: "Hospital Photo Gallery (चित्र दीर्घा)", href: "#gallery", id: "gallery", badge: "Photos" },
               { label: "North Lucknow Catchment Areas", href: "#catchment", id: "catchment" },
               { label: "Cashless TPA & Visitor Guidelines", href: "#patient-guide", id: "patient-guide" },
               { label: "Location Map & Directions", href: "#contact", id: "contact" }
