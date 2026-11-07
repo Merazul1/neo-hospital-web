@@ -17,13 +17,15 @@ export interface Specialty {
 export interface Doctor {
   id: string;
   name: string;
+  nameHi?: string;
   qualifications: string;
   department: string;
-  experienceYears: number;
+  departmentCategory: string;
   designation: string;
   opdTimings: string;
-  expertise: string[];
   days: string;
+  expertise: string[];
+  brochureIcon?: string;
 }
 
 export interface CatchmentArea {
@@ -323,72 +325,402 @@ export const CATCHMENT_AREAS: CatchmentArea[] = [
   }
 ];
 
+// All 29 Official Doctors from NEO Hospital Pamphlet
 export const DOCTORS_ROSTER: Doctor[] = [
+  // 1. गैस्ट्रोएंटेरोलॉजिस्ट (Gastroenterology)
   {
-    id: "dr-oncology",
-    name: "Dr. A. K. Srivastava",
-    qualifications: "MBBS, MS (Surgery), MCh (Surgical Oncology)",
-    department: "Cancer Center & Surgical Oncology",
-    designation: "Chief Surgical Oncologist & Head of Tumor Board",
-    experienceYears: 18,
-    opdTimings: "10:00 AM – 3:00 PM",
+    id: "dr-sudhakar-pandey",
+    name: "Dr. Sudhakar Pandey",
+    nameHi: "डॉ० सुधाकर पाण्डेय",
+    qualifications: "M.D., D.M.",
+    department: "Gastroenterology (गैस्ट्रोएंटेरोलॉजिस्ट)",
+    departmentCategory: "gastro",
+    designation: "Senior Consultant Gastroenterologist",
+    opdTimings: "11:00 AM – 3:00 PM",
     days: "Monday, Wednesday, Friday",
-    expertise: ["Breast Cancer Surgery", "Head & Neck Onco-Resection", "Chemotherapy Protocols", "GI Malignancies"]
+    expertise: ["Endoscopy & Colonoscopy", "Liver & Pancreatic Diseases", "Peptic Ulcers & GI Bleeding", "Jaundice & Hepatitis"]
   },
   {
-    id: "dr-ortho",
-    name: "Dr. Manish Verma",
-    qualifications: "MBBS, MS (Orthopedics), Fellowship in Joint Replacement (Germany)",
-    department: "Orthopedic Surgery & Joint Replacement",
-    designation: "Senior Orthopedic & Joint Replacement Surgeon",
-    experienceYears: 16,
-    opdTimings: "10:30 AM – 6:30 PM",
-    days: "Monday – Saturday",
-    expertise: ["Total Knee Replacement (TKR)", "Total Hip Replacement (THR)", "C-ARM Trauma Fixation", "Arthroscopy"]
-  },
-  {
-    id: "dr-critical-care",
-    name: "Dr. Rajeshwar Singh",
-    qualifications: "MBBS, MD (Anesthesia & Critical Care), IDCCM, EDIC",
-    department: "Critical & Emergency Care (ICU / NICU)",
-    designation: "Director - Critical Care & Intensivist Services",
-    experienceYears: 15,
-    opdTimings: "24/7 Emergency & ICU Rounds",
-    days: "Daily Availability",
-    expertise: ["Advanced Mechanical Ventilation", "Sepsis Management", "Polytrauma Triage", "Arterial Hemodynamics"]
-  },
-  {
-    id: "dr-laparoscopy",
-    name: "Dr. Priyanka Gupta",
-    qualifications: "MBBS, MS (General Surgery), FMAS, FIAGES",
-    department: "Laparoscopic & Gastrointestinal Surgery",
-    designation: "Senior Laparoscopic & General Surgeon",
-    experienceYears: 14,
-    opdTimings: "11:00 AM – 5:00 PM",
-    days: "Monday – Saturday",
-    expertise: ["Laparoscopic Cholecystectomy", "Hernia Repair (TEP/TAPP)", "Appendectomy", "Emergency GI Perforations"]
-  },
-  {
-    id: "dr-pediatrics",
-    name: "Dr. S. N. Mishra",
-    qualifications: "MBBS, MD (Pediatrics), Fellowship in Neonatology (NICU)",
-    department: "Pediatrics & Neonatal Care (NICU)",
-    designation: "Senior Consultant Pediatrician & Neonatologist",
-    experienceYears: 17,
-    opdTimings: "9:00 AM – 1:00 PM & 5:00 PM – 8:00 PM",
-    days: "Monday – Saturday",
-    expertise: ["Premature Neonatal Care", "Pediatric Respiratory Distress", "Growth & Vaccination", "Pediatric Emergencies"]
-  },
-  {
-    id: "dr-urology",
-    name: "Dr. Rohit Tiwari",
-    qualifications: "MBBS, MS, MCh (Urology)",
-    department: "Urology & Kidney Stone Center",
-    designation: "Senior Consultant Urologist & Andrologist",
-    experienceYears: 12,
+    id: "dr-sanjay-somani",
+    name: "Dr. Sanjay Kumar Somani",
+    nameHi: "डॉ० संजय कुमार सोमानी",
+    qualifications: "M.D., D.M.",
+    department: "Gastroenterology (गैस्ट्रोएंटेरोलॉजिस्ट)",
+    departmentCategory: "gastro",
+    designation: "Senior Consultant Gastroenterologist & Hepatologist",
     opdTimings: "12:00 PM – 4:00 PM",
     days: "Tuesday, Thursday, Saturday",
-    expertise: ["PCNL & URS Stone Removal", "TURP Prostate Resection", "Stricture Urethroplasty", "Kidney Dialysis Access"]
+    expertise: ["Therapeutic Endoscopy", "Cirrhosis & Liver Care", "Chronic Constipation & IBS", "GI Motility"]
+  },
+  {
+    id: "dr-sarang",
+    name: "Dr. Sarang",
+    nameHi: "डॉ० सारंग",
+    qualifications: "MD, DM (Gastro)",
+    department: "Gastroenterology (गैस्ट्रोएंटेरोलॉजिस्ट)",
+    departmentCategory: "gastro",
+    designation: "Consultant Gastroenterologist",
+    opdTimings: "1:00 PM – 5:00 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["Acid Reflux (GERD)", "Fatty Liver Management", "Biliary Tract Disorders", "Diagnostic Colonoscopy"]
+  },
+
+  // 2. कैंसर (Oncology & Cancer Surgery)
+  {
+    id: "dr-vashishtha-cancer",
+    name: "Dr. Vashishtha",
+    nameHi: "डॉ० वशिष्ठ",
+    qualifications: "MS, MCh",
+    department: "Surgical Oncology & Cancer Care (कैंसर)",
+    departmentCategory: "cancer",
+    designation: "Senior Surgical Oncologist & Cancer Surgeon",
+    opdTimings: "10:00 AM – 3:00 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Cancer Surgery & Tumor Resection", "Breast & Oral Malignancies", "GI Onco-Surgery", "Chemotherapy Protocols"]
+  },
+  {
+    id: "dr-sudeep-garg",
+    name: "Dr. Sudeep Kumar Garg",
+    nameHi: "डॉ० सुदीप कुमार गर्ग",
+    qualifications: "MS, MCh",
+    department: "Surgical Oncology & Cancer Care (कैंसर)",
+    departmentCategory: "cancer",
+    designation: "Chief Cancer Surgeon & Oncologist",
+    opdTimings: "11:00 AM – 4:00 PM",
+    days: "Tuesday, Thursday, Saturday",
+    expertise: ["Head & Neck Composite Resection", "Thoracic Malignancies", "Colorectal Cancers", "Multidisciplinary Tumor Board"]
+  },
+  {
+    id: "dr-manoj-srivastava",
+    name: "Dr. Manoj Kumar Srivastava",
+    nameHi: "डॉ० मनोज कुमार श्रीवास्तव",
+    qualifications: "MS, MCh",
+    department: "Surgical Oncology & Cancer Care (कैंसर)",
+    departmentCategory: "cancer",
+    designation: "Senior Consultant Surgical Oncologist",
+    opdTimings: "10:30 AM – 3:30 PM",
+    days: "Daily (Surgeries by Schedule)",
+    expertise: ["Radical Mastectomy", "Gynecological Onco-Surgeries", "Chemo Port Access", "Palliative Cancer Care"]
+  },
+
+  // 3. गाइनाकोलॉजिस्ट (Gynecology & Obstetrics / स्त्री रोग विशेषज्ञ)
+  {
+    id: "dr-shikha",
+    name: "Dr. Shikha",
+    nameHi: "डॉ० शिखा",
+    qualifications: "MBBS, M.S. (स्त्री रोग विशेषज्ञ)",
+    department: "Gynecology & Obstetrics (गाइनाकोलॉजिस्ट)",
+    departmentCategory: "gynecology",
+    designation: "Senior Consultant Gynecologist & Obstetrician",
+    opdTimings: "10:00 AM – 2:00 PM & 5:00 PM – 7:00 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["High-Risk Pregnancy Care", "Laparoscopic Hysterectomy (बच्चेदानी दूरबीन आपरेशन)", "Normal & C-Section Delivery", "Infertility Management"]
+  },
+  {
+    id: "dr-tripti-gupta",
+    name: "Dr. Tripti Gupta",
+    nameHi: "डॉ० तृप्ति गुप्ता",
+    qualifications: "MBBS, M.S. (स्त्री रोग विशेषज्ञ)",
+    department: "Gynecology & Obstetrics (गाइनाकोलॉजिस्ट)",
+    departmentCategory: "gynecology",
+    designation: "Senior Consultant Gynecologist",
+    opdTimings: "11:00 AM – 4:00 PM",
+    days: "Mon, Wed, Fri, Sat",
+    expertise: ["PCOS & Menstrual Irregularities", "Laparoscopic Ovarian Cystectomy", "Uterine Fibroids", "Antenatal Care"]
+  },
+
+  // 4. आर्थोपेडिक सर्जन (Orthopedic Surgery & Joint Replacement)
+  {
+    id: "dr-yashwant-singh",
+    name: "Dr. Yashwant Singh",
+    nameHi: "डॉ० यशवंत सिंह",
+    qualifications: "MS (Ortho)",
+    department: "Orthopedic Surgery & Joint Replacement (आर्थोपेडिक सर्जन)",
+    departmentCategory: "ortho",
+    designation: "Senior Orthopedic & Joint Replacement Surgeon",
+    opdTimings: "10:00 AM – 3:00 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["Total Knee Replacement (TKR)", "Total Hip Replacement (THR)", "C-ARM Guided Trauma Fixation", "Arthroscopy"]
+  },
+  {
+    id: "dr-naveen-shukla",
+    name: "Dr. Naveen Shukla",
+    nameHi: "डॉ० नवीन शुक्ला",
+    qualifications: "MS (Ortho)",
+    department: "Orthopedic Surgery & Joint Replacement (आर्थोपेडिक सर्जन)",
+    departmentCategory: "ortho",
+    designation: "Senior Orthopedic & Trauma Surgeon",
+    opdTimings: "12:00 PM – 5:00 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Complex Bone Fractures (हड्डी फ्रैक्चर)", "Spine & Neck Pain Management", "Joint Injections", "Polytrauma"]
+  },
+  {
+    id: "dr-mujahid",
+    name: "Dr. Mujahid",
+    nameHi: "डॉ० मुजाहिद",
+    qualifications: "MS (Ortho)",
+    department: "Orthopedic Surgery & Joint Replacement (आर्थोपेडिक सर्जन)",
+    departmentCategory: "ortho",
+    designation: "Consultant Orthopedic Surgeon",
+    opdTimings: "11:00 AM – 4:00 PM",
+    days: "Tuesday, Thursday, Saturday",
+    expertise: ["Knee & Hip Arthritis", "Fracture Plating & Interlocking Nails", "Sports Injuries & Ligament Tears", "Geriatric Trauma"]
+  },
+
+  // 5. टी०बी० एण्ड चेस्ट (TB & Chest / Pulmonology / चेस्ट विशेषज्ञ)
+  {
+    id: "dr-haider-raza",
+    name: "Dr. Haider Raza",
+    nameHi: "डॉ० हैदर रज़ा",
+    qualifications: "M.D., DNB (चेस्ट विशेषज्ञ)",
+    department: "TB & Chest / Pulmonology (टी०बी० एण्ड चेस्ट)",
+    departmentCategory: "chest",
+    designation: "Chief Pulmonologist & Chest Specialist",
+    opdTimings: "11:00 AM – 3:30 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Tuberculosis (टी.बी.) Care", "Asthma & COPD Protocols", "Bronchoscopy & P.F.T.", "Respiratory Failure Management"]
+  },
+  {
+    id: "dr-mohd-arif",
+    name: "Dr. Mohd. Arif",
+    nameHi: "डॉ० मो० आरिफ़",
+    qualifications: "MBBS, MD (चेस्ट विशेषज्ञ)",
+    department: "TB & Chest / Pulmonology (टी०बी० एण्ड चेस्ट)",
+    departmentCategory: "chest",
+    designation: "Senior Chest Physician",
+    opdTimings: "10:00 AM – 2:30 PM",
+    days: "Tuesday, Thursday, Saturday",
+    expertise: ["Allergy Testing & Immunotherapy", "Pneumonia & Pleural Effusion", "Sleep Apnea & NIV Support", "Lung Infections"]
+  },
+
+  // 6. नाक, कान, गला (ENT - Ear, Nose, Throat)
+  {
+    id: "dr-firoz-ahmad",
+    name: "Dr. Firoz Ahmad",
+    nameHi: "डॉ० फिरोज़ अहमद",
+    qualifications: "MBBS, MS (ENT)",
+    department: "ENT (नाक, कान, गला)",
+    departmentCategory: "ent",
+    designation: "Senior Consultant ENT Surgeon",
+    opdTimings: "10:00 AM – 2:00 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Microscopic Ear Surgery (Tympanoplasty)", "Endoscopic Sinus Surgery (FESS)", "Tonsils & Adenoids Excision", "Hearing Loss Solutions"]
+  },
+  {
+    id: "dr-jaya-gupta",
+    name: "Dr. Jaya Gupta",
+    nameHi: "डॉ० जया गुप्ता",
+    qualifications: "MBBS, MS (ENT)",
+    department: "ENT (नाक, कान, गला)",
+    departmentCategory: "ent",
+    designation: "Senior ENT Specialist & Surgeon",
+    opdTimings: "11:00 AM – 3:00 PM",
+    days: "Tuesday, Thursday, Saturday",
+    expertise: ["Endoscopic Nasal & Thyroid Surgery", "Vertigo & Tinnitus Evaluation", "Throat & Voice Disorders", "Airway Foreign Body Removal"]
+  },
+  {
+    id: "dr-anitya-agarwal",
+    name: "Dr. Anitya Agarwal",
+    nameHi: "डॉ० अनित्य अग्रवाल",
+    qualifications: "MS (ENT)",
+    department: "ENT (नाक, कान, गला)",
+    departmentCategory: "ent",
+    designation: "Consultant ENT Surgeon",
+    opdTimings: "1:00 PM – 5:00 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["Deviated Septum (DNS) Septoplasty", "Ear Discharge & Perforation", "Snoring Management", "Head & Neck Swellings"]
+  },
+
+  // 7. यूरो (Urology & Uro Surgery)
+  {
+    id: "dr-jainil-bhagwade",
+    name: "Dr. Jainil Bhagwade",
+    nameHi: "डॉ० जैनिल भगवड़े",
+    qualifications: "M.S., MCh",
+    department: "Urology & Uro Surgery (यूरो)",
+    departmentCategory: "urology",
+    designation: "Chief Urologist & Uro-Surgeon",
+    opdTimings: "11:00 AM – 4:00 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Laser Kidney Stone Removal (PCNL, URS)", "Prostate Laser Surgery (TURP)", "Urethral Stricture Plasty", "Kidney Dialysis Fistula"]
+  },
+  {
+    id: "dr-sartaj-khan",
+    name: "Dr. Sartaj Ali Khan",
+    nameHi: "डॉ० सरताज अली खान",
+    qualifications: "M.S.",
+    department: "Urology & Uro Surgery (यूरो)",
+    departmentCategory: "urology",
+    designation: "Senior Uro & General Surgeon",
+    opdTimings: "10:30 AM – 3:30 PM",
+    days: "Tuesday, Thursday, Saturday",
+    expertise: ["Kidney & Bladder Stones", "Hydrocele & Hernia Surgery (दूरबीन आपरेशन)", "Urinary Incontinence & UTI", "Male Infertility Evaluation"]
+  },
+
+  // 8. प्लास्टिक सर्जरी (Plastic & Reconstructive Surgery)
+  {
+    id: "dr-radha-srivastava",
+    name: "Dr. Radha Srivastava",
+    nameHi: "डॉ० राधा श्रीवास्तव",
+    qualifications: "M.S., MCh",
+    department: "Plastic & Reconstructive Surgery (प्लास्टिक सर्जरी)",
+    departmentCategory: "plastic",
+    designation: "Senior Plastic & Microvascular Surgeon",
+    opdTimings: "11:00 AM – 3:00 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Trauma Wound Reconstruction", "Burns Contracture Release", "Skin Grafting (STSG)", "Facial Fractures Plating"]
+  },
+  {
+    id: "dr-pushpendra",
+    name: "Dr. Pushpendra",
+    nameHi: "डॉ० पुष्पेन्द्र",
+    qualifications: "M.S., MCh",
+    department: "Plastic & Reconstructive Surgery (प्लास्टिक सर्जरी)",
+    departmentCategory: "plastic",
+    designation: "Consultant Plastic & Cosmetic Surgeon",
+    opdTimings: "12:00 PM – 4:00 PM",
+    days: "Tuesday, Thursday, Saturday",
+    expertise: ["Aesthetic & Cosmetic Procedures", "Tendon & Nerve Injury Repair", "Scar Revision", "Post-Tumor Reconstruction"]
+  },
+
+  // 9. बाल रोग विशेषज्ञ (Pediatrics & Neonatology / NICU)
+  {
+    id: "dr-puneet-tulsyan",
+    name: "Dr. Puneet Kumar Tulsyan",
+    nameHi: "डॉ० पुनीत कुमार तुलस्यान",
+    qualifications: "MBBS",
+    department: "Pediatrics & Child Care (बाल रोग विशेषज्ञ)",
+    departmentCategory: "pediatrics",
+    designation: "Senior Pediatric Physician",
+    opdTimings: "9:30 AM – 2:00 PM & 5:00 PM – 7:30 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["Acute Childhood Infections & Fevers", "Pediatric Vaccination & Immunization", "Nutritional Counseling", "Growth & Developmental Screening"]
+  },
+  {
+    id: "dr-vineet-kumar",
+    name: "Dr. Vineet Kumar",
+    nameHi: "डॉ० विनीत कुमार",
+    qualifications: "MBBS, MD",
+    department: "Pediatrics & Child Care (बाल रोग विशेषज्ञ)",
+    departmentCategory: "pediatrics",
+    designation: "Senior Consultant Pediatrician & Neonatologist",
+    opdTimings: "10:00 AM – 3:00 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["Neonatal Intensive Care (NICU Level-III)", "Premature Newborn Care", "Pediatric Asthma & Allergies", "Neonatal Jaundice"]
+  },
+  {
+    id: "dr-ajay-verma",
+    name: "Dr. Ajay Verma",
+    nameHi: "डॉ० अजय वर्मा",
+    qualifications: "MBBS, MS, MCh",
+    department: "Pediatric Surgery (बाल रोग विशेषज्ञ)",
+    departmentCategory: "pediatrics",
+    designation: "Consultant Pediatric Surgeon",
+    opdTimings: "12:00 PM – 4:30 PM",
+    days: "Mon, Wed, Fri, Sat",
+    expertise: ["Pediatric Surgical Conditions", "Congenital Anomalies", "Pediatric Hernia & Hydrocele", "Newborn Surgeries"]
+  },
+
+  // 10. नेफ्रोलॉजिस्ट (Nephrology & Kidney Care)
+  {
+    id: "dr-rk-singh",
+    name: "Dr. R.K. Singh",
+    nameHi: "डॉ० आर०के० सिंह",
+    qualifications: "MBBS, MD",
+    department: "Nephrology & Kidney Care (नेफ्रोलॉजिस्ट)",
+    departmentCategory: "nephro",
+    designation: "Senior Kidney Specialist & Physician",
+    opdTimings: "10:00 AM – 2:30 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Chronic Kidney Disease (CKD)", "Hemodialysis Management", "Hypertension & Diabetic Nephropathy", "Glomerulonephritis"]
+  },
+  {
+    id: "dr-farrukh-kidwai",
+    name: "Dr. Farrukh Kidwai",
+    nameHi: "डॉ० फारूख किदवई",
+    qualifications: "MBBS, MD, DM (Nephro)",
+    department: "Nephrology & Kidney Care (नेफ्रोलॉजिस्ट)",
+    departmentCategory: "nephro",
+    designation: "Chief Consultant Nephrologist",
+    opdTimings: "11:30 AM – 4:00 PM",
+    days: "Tuesday, Thursday, Saturday",
+    expertise: ["Acute Renal Failure", "Electrolyte & Acid-Base Disorders", "Kidney Biopsy", "Renal Dialysis Protocols"]
+  },
+
+  // 11. मेडिसिन (General Medicine & Endocrinology)
+  {
+    id: "dr-ak-yadav",
+    name: "Dr. A.K. Yadav",
+    nameHi: "डॉ० ए०के० यादव",
+    qualifications: "MBBS, MD (Medicine)",
+    department: "Medicine & General Physician (मेडिसिन)",
+    departmentCategory: "medicine",
+    designation: "Senior Consultant Physician",
+    opdTimings: "9:00 AM – 2:00 PM & 4:30 PM – 7:30 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["Diabetes & Blood Pressure Management", "Infectious Fevers (Dengue, Typhoid, Malaria)", "Liver & Sepsis Care", "Multisystem Disorders"]
+  },
+  {
+    id: "dr-shahabuddin-khan",
+    name: "Dr. Shahabuddin Khan",
+    nameHi: "डॉ० शहाबुद्दीन खान",
+    qualifications: "MBBS, MD",
+    department: "Medicine & Internal Care (मेडिसिन)",
+    departmentCategory: "medicine",
+    designation: "Senior Consultant Physician",
+    opdTimings: "10:00 AM – 3:30 PM",
+    days: "Daily (Mon – Sat)",
+    expertise: ["Adult Internal Medicine", "Cardiac & Respiratory Comorbidities", "Geriatric Healthcare", "Critical Inpatient Care"]
+  },
+  {
+    id: "dr-abhishek-arun",
+    name: "Dr. Abhishek Arun",
+    nameHi: "डॉ० अभिषेक अरूण",
+    qualifications: "MBBS, MD, Endocrinologist",
+    department: "Endocrinology & Diabetology (मेडिसिन)",
+    departmentCategory: "medicine",
+    designation: "Consultant Endocrinologist & Diabetologist",
+    opdTimings: "11:00 AM – 4:00 PM",
+    days: "Monday, Wednesday, Friday",
+    expertise: ["Complex Diabetes Management", "Thyroid Disorders (थायराइड)", "Hormonal Imbalances", "Metabolic Syndrome & Obesity"]
+  },
+
+  // 12. एनेस्थेटिक्स (Anaesthesia & Critical Care)
+  {
+    id: "dr-vashishtha-anaesthesia",
+    name: "Dr. Vashishtha",
+    nameHi: "डॉ० वशिष्ठ",
+    qualifications: "MBBS, MD",
+    department: "Anaesthetics & Critical Care (एनेस्थेटिक्स)",
+    departmentCategory: "anaesthesia",
+    designation: "Senior Anaesthesiologist & Intensivist",
+    opdTimings: "Round-the-clock Surgical Coverage",
+    days: "24/7 OT & ICU Availability",
+    expertise: ["General & Regional Anaesthesia", "Critical Care Resuscitation", "Post-Op Pain Management", "Difficult Airway Management"]
+  },
+  {
+    id: "dr-ajay-veer",
+    name: "Dr. Ajay Veer",
+    nameHi: "डॉ० अजय वीर",
+    qualifications: "MBBS, MD",
+    department: "Anaesthetics & Critical Care (एनेस्थेटिक्स)",
+    departmentCategory: "anaesthesia",
+    designation: "Senior Anaesthesiologist & Intensivist",
+    opdTimings: "Round-the-clock Critical Care",
+    days: "24/7 OT & ICU Availability",
+    expertise: ["Neuro & Onco-Anaesthesia", "Central Lines & Arterial Monitoring", "Ventilator Protocols", "Acute Pain Service"]
+  },
+  {
+    id: "dr-mohd-zubair-khan",
+    name: "Dr. Mohd. Zubair Khan",
+    nameHi: "डॉ० मो० जुबैर खान",
+    qualifications: "MBBS, MD",
+    department: "Anaesthetics & Critical Care (एनेस्थेटिक्स)",
+    departmentCategory: "anaesthesia",
+    designation: "Consultant Anaesthesiologist & Critical Care",
+    opdTimings: "Round-the-clock Emergency & OT",
+    days: "24/7 Emergency Coverage",
+    expertise: ["Laparoscopic & Pediatric Anaesthesia", "Trauma Resuscitation", "ICU Multi-para Hemodynamics", "Sedation Protocols"]
   }
 ];
 
