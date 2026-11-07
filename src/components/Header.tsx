@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   Phone, MapPin, Menu, X, Calendar, ChevronDown, Activity, 
-  Pill, ShieldAlert, Bone, Eye, Stethoscope, Clock 
+  Pill, ShieldAlert, Bone, Eye, Brain, Stethoscope, Clock,
+  Sparkles, CheckCircle2
 } from 'lucide-react';
-import { HOSPITAL_INFO, FACILITIES_BOARD_LIST } from '../data/hospitalData';
+import { HOSPITAL_INFO } from '../data/hospitalData';
 
 interface HeaderProps {
   onOpenAppointment: (dept?: string) => void;
@@ -34,32 +35,38 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/98 backdrop-blur-md shadow-sm border-b border-slate-100 w-full max-w-full overflow-x-clip transition-all">
-      {/* 1. Top Emergency Utility Bar (Zero-overflow layout) */}
-      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-teal-950 text-white py-1.5 sm:py-2 px-3 sm:px-6 w-full max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+    <header className="sticky top-0 z-50 bg-white/98 backdrop-blur-md shadow-sm border-b border-slate-200/80 w-full max-w-full overflow-x-clip transition-all">
+      
+      {/* 1. Top Emergency Utility Bar */}
+      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-teal-950 text-white py-1.5 px-3 sm:px-6 w-full max-w-full overflow-hidden border-b border-slate-800/80">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
           
           {/* Left: 24/7 Status & Physical Address */}
-          <div className="flex items-center gap-2 min-w-0">
-            <span className="flex items-center gap-1.5 text-teal-300 font-bold shrink-0 text-[10px] sm:text-xs">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-              <span>24/7 Emergency &amp; ICU</span>
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span className="flex items-center gap-1.5 text-teal-300 font-bold shrink-0 text-[11px] sm:text-xs">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>24/7 Emergency &amp; Trauma Ready</span>
             </span>
-            <span className="hidden md:flex items-center gap-1 text-slate-300 text-[11px] truncate">
+
+            <span className="hidden lg:flex items-center gap-1.5 text-slate-300 text-xs truncate">
               <span className="text-slate-600">•</span>
               <MapPin className="w-3.5 h-3.5 text-teal-400 shrink-0" />
               <span className="truncate">3, Pratap Nagar, Tedhi Pulia, Ring Road, Lucknow – 226022</span>
             </span>
           </div>
 
-          {/* Right: Helpline Quick Dial */}
+          {/* Right: Quick Emergency Ambulance Hotline */}
           <div className="flex items-center shrink-0 ml-auto">
             <a 
               href={`tel:${HOSPITAL_INFO.helpline}`}
-              className="flex items-center gap-1 font-bold text-white bg-red-600 hover:bg-red-700 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-sm transition animate-emergency-glow text-[10px] sm:text-xs whitespace-nowrap"
+              className="flex items-center gap-1.5 font-bold text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded-full shadow-sm transition text-xs whitespace-nowrap"
+              title="Call 24/7 Emergency Helpline"
             >
-              <Phone className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white animate-pulse shrink-0" />
-              <span>Helpline: <span className="underline tracking-wide font-black">{HOSPITAL_INFO.helpline}</span></span>
+              <Phone className="w-3 h-3 text-white animate-bounce shrink-0" />
+              <span>24/7 Helpline: <span className="underline font-black tracking-wide">{HOSPITAL_INFO.helpline}</span></span>
             </a>
           </div>
 
@@ -67,168 +74,176 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
       </div>
 
       {/* 2. Main Navigation Bar */}
-      <div className="w-full max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2">
+      <div className="w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between gap-4">
           
-          {/* Brand Logo & Title (Responsive, never exceeds container) */}
+          {/* Brand Logo & Name (Protected with shrink-0, never collides) */}
           <a 
             href="#home" 
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-2 sm:gap-3 shrink min-w-0 select-none group"
+            className="flex items-center gap-3 shrink-0 select-none group"
           >
             <img 
               src="/images/neo-logo.png" 
               alt="NEO Hospital Logo" 
-              className="h-8 sm:h-10 md:h-11 w-auto object-contain transition-transform group-hover:scale-105 shrink-0" 
+              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 shrink-0" 
             />
-            <div className="flex flex-col min-w-0 justify-center">
-              <div className="flex items-center gap-1 leading-none">
-                <span className="text-base sm:text-lg md:text-xl font-black tracking-tight text-slate-900">NEO</span>
-                <span className="text-base sm:text-lg md:text-xl font-black tracking-tight text-red-600">HOSPITAL</span>
+            <div className="flex flex-col shrink-0 justify-center">
+              <div className="flex items-center gap-1.5 leading-none">
+                <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900">NEO</span>
+                <span className="text-xl sm:text-2xl font-black tracking-tight text-red-600">HOSPITAL</span>
               </div>
-              <span className="text-[8px] sm:text-[10px] font-bold text-teal-700 tracking-wider uppercase mt-0.5 truncate max-w-[180px] sm:max-w-none">
+              <span className="text-[9px] sm:text-[10px] font-bold text-teal-700 tracking-wider uppercase mt-1">
                 Superspeciality &amp; Cancer Center
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Visible on lg: 1024px and above) */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 shrink-0">
+          {/* Desktop Navigation Links (Clean, streamlined, 0 overlapping) */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             
             {/* Specialties & Facilities Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setSpecialtiesDropdownOpen(!specialtiesDropdownOpen)}
                 onMouseEnter={() => setSpecialtiesDropdownOpen(true)}
-                className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap flex items-center gap-1 ${
-                  activeSection === 'facilities' || activeSection === 'surgeries' || specialtiesDropdownOpen
-                    ? 'text-teal-700 bg-teal-50'
-                    : 'text-slate-700 hover:text-teal-700 hover:bg-slate-50'
+                className={`px-3 py-2 text-xs xl:text-sm font-bold rounded-xl transition-all whitespace-nowrap flex items-center gap-1.5 ${
+                  activeSection === 'facilities' || activeSection === 'surgeries' || activeSection === 'cancer-center' || activeSection === 'critical-care' || specialtiesDropdownOpen
+                    ? 'text-teal-800 bg-teal-50 ring-1 ring-teal-200'
+                    : 'text-slate-700 hover:text-teal-700 hover:bg-slate-100/80'
                 }`}
               >
-                <span>Specialties (15)</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${specialtiesDropdownOpen ? 'rotate-180 text-teal-600' : 'text-slate-400'}`} />
+                <span>Specialties &amp; Facilities</span>
+                <span className="text-[10px] bg-teal-100 text-teal-800 px-1.5 py-0.2 rounded font-extrabold">15</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${specialtiesDropdownOpen ? 'rotate-180 text-teal-600' : 'text-slate-400'}`} />
               </button>
 
               {/* Mega Dropdown Menu */}
               {specialtiesDropdownOpen && (
                 <div 
                   onMouseLeave={() => setSpecialtiesDropdownOpen(false)}
-                  className="absolute left-0 mt-2 w-[440px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 z-50 animate-in fade-in slide-in-from-top-2 duration-150 grid grid-cols-2 gap-3"
+                  className="absolute left-0 mt-2 w-[480px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 z-50 animate-in fade-in slide-in-from-top-2 duration-150 grid grid-cols-2 gap-3"
                 >
-                  <div className="space-y-1.5">
+                  {/* Left Column: Emergency & Critical Specialities */}
+                  <div className="space-y-1">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 block px-2 mb-1">
                       Critical &amp; Oncology
                     </span>
                     <a
                       href="#critical-care"
                       onClick={() => handleNavClick('critical-care')}
-                      className="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 text-xs font-semibold text-slate-800 transition"
+                      className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-teal-50/80 text-xs font-semibold text-slate-800 transition"
                     >
-                      <Activity className="w-4 h-4 text-red-600 shrink-0" />
+                      <div className="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0">
+                        <Activity className="w-4 h-4" />
+                      </div>
                       <div>
-                        <span>ICU, NICU &amp; Ventilator</span>
-                        <span className="block text-[10px] text-slate-400 font-normal">आई.सी.यू. एवं वेंटीलेटर</span>
+                        <span className="font-bold text-slate-900 block">ICU &amp; Ventilator</span>
+                        <span className="text-[10px] text-slate-500 font-normal">आई.सी.यू., एन.आई.सी.यू.</span>
                       </div>
                     </a>
+
                     <a
                       href="#cancer-center"
                       onClick={() => handleNavClick('cancer-center')}
-                      className="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 text-xs font-semibold text-slate-800 transition"
+                      className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-teal-50/80 text-xs font-semibold text-slate-800 transition"
                     >
-                      <Pill className="w-4 h-4 text-teal-600 shrink-0" />
+                      <div className="w-7 h-7 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+                        <Pill className="w-4 h-4" />
+                      </div>
                       <div>
-                        <span>Chemotherapy Daycare</span>
-                        <span className="block text-[10px] text-slate-400 font-normal">कीमोथेरेपी यूनिट</span>
+                        <span className="font-bold text-slate-900 block">Chemotherapy Daycare</span>
+                        <span className="text-[10px] text-slate-500 font-normal">कीमोथेरेपी यूनिट</span>
                       </div>
                     </a>
+
                     <a
                       href="#cancer-center"
                       onClick={() => handleNavClick('cancer-center')}
-                      className="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 text-xs font-semibold text-slate-800 transition"
+                      className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-teal-50/80 text-xs font-semibold text-slate-800 transition"
                     >
-                      <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0" />
+                      <div className="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                        <ShieldAlert className="w-4 h-4" />
+                      </div>
                       <div>
-                        <span>Cancer Surgery</span>
-                        <span className="block text-[10px] text-slate-400 font-normal">कैंसर सर्जरी</span>
+                        <span className="font-bold text-slate-900 block">Surgical Oncology</span>
+                        <span className="text-[10px] text-slate-500 font-normal">कैंसर सर्जरी</span>
                       </div>
                     </a>
                   </div>
 
-                  <div className="space-y-1.5 border-l border-slate-100 pl-3">
+                  {/* Right Column: Surgical & Clinical */}
+                  <div className="space-y-1 border-l border-slate-100 pl-3">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 block px-2 mb-1">
-                      Surgical Specialties
+                      Advanced Surgery
                     </span>
                     <a
                       href="#surgeries"
                       onClick={() => handleNavClick('surgeries')}
-                      className="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 text-xs font-semibold text-slate-800 transition"
+                      className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-teal-50/80 text-xs font-semibold text-slate-800 transition"
                     >
-                      <Bone className="w-4 h-4 text-teal-600 shrink-0" />
+                      <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                        <Bone className="w-4 h-4" />
+                      </div>
                       <div>
-                        <span>Joint Replacement (C-ARM)</span>
-                        <span className="block text-[10px] text-slate-400 font-normal">आर्थोपेडिक सर्जरी</span>
+                        <span className="font-bold text-slate-900 block">Orthopedics &amp; Joint</span>
+                        <span className="text-[10px] text-slate-500 font-normal">C-ARM घुटना व कूल्हा</span>
                       </div>
                     </a>
+
                     <a
                       href="#surgeries"
                       onClick={() => handleNavClick('surgeries')}
-                      className="flex items-center gap-2 p-2 rounded-xl hover:bg-slate-50 text-xs font-semibold text-slate-800 transition"
+                      className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-teal-50/80 text-xs font-semibold text-slate-800 transition"
                     >
-                      <Eye className="w-4 h-4 text-red-600 shrink-0" />
+                      <div className="w-7 h-7 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+                        <Eye className="w-4 h-4" />
+                      </div>
                       <div>
-                        <span>Laparoscopic Surgery</span>
-                        <span className="block text-[10px] text-slate-400 font-normal">दूरबीन द्वारा आपरेशन</span>
+                        <span className="font-bold text-slate-900 block">Laparoscopic Surgery</span>
+                        <span className="text-[10px] text-slate-500 font-normal">दूरबीन द्वारा आपरेशन</span>
                       </div>
                     </a>
+
+                    <a
+                      href="#doctors"
+                      onClick={() => handleNavClick('doctors')}
+                      className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-teal-50/80 text-xs font-semibold text-slate-800 transition"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
+                        <Brain className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <span className="font-bold text-slate-900 block">Neuro Surgery</span>
+                        <span className="text-[10px] text-slate-500 font-normal">मस्तिष्क एवं रीढ़ रोग</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  {/* Dropdown Footer CTA */}
+                  <div className="col-span-2 pt-2 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-[11px] text-slate-500 font-medium">All 15 board-verified hospital facilities</span>
                     <a
                       href="#facilities"
                       onClick={() => handleNavClick('facilities')}
-                      className="p-2 text-center rounded-xl bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold transition block mt-1"
+                      className="text-teal-700 hover:text-teal-800 text-xs font-bold hover:underline flex items-center gap-1"
                     >
-                      View All 15 Facilities Board &rarr;
+                      <span>Explore Facilities Board</span>
+                      <span>&rarr;</span>
                     </a>
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Cancer Center */}
-            <a
-              href="#cancer-center"
-              onClick={() => handleNavClick('cancer-center')}
-              className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap flex items-center gap-1.5 ${
-                activeSection === 'cancer-center'
-                  ? 'text-teal-700 bg-teal-50'
-                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-50'
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0"></span>
-              <span>Cancer Center</span>
-            </a>
-
-            {/* Critical Care */}
-            <a
-              href="#critical-care"
-              onClick={() => handleNavClick('critical-care')}
-              className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap flex items-center gap-1.5 ${
-                activeSection === 'critical-care'
-                  ? 'text-red-700 bg-red-50'
-                  : 'text-slate-700 hover:text-red-600 hover:bg-slate-50'
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse shrink-0"></span>
-              <span>24/7 Critical Care</span>
-            </a>
-
             {/* Doctors & OPD */}
             <a
               href="#doctors"
               onClick={() => handleNavClick('doctors')}
-              className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 text-xs xl:text-sm font-bold rounded-xl transition-all whitespace-nowrap ${
                 activeSection === 'doctors'
-                  ? 'text-teal-700 bg-teal-50'
-                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-50'
+                  ? 'text-teal-800 bg-teal-50 ring-1 ring-teal-200'
+                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-100/80'
               }`}
             >
               Doctors &amp; OPD
@@ -238,23 +253,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
             <a
               href="#gallery"
               onClick={() => handleNavClick('gallery')}
-              className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 text-xs xl:text-sm font-bold rounded-xl transition-all whitespace-nowrap ${
                 activeSection === 'gallery'
-                  ? 'text-teal-700 bg-teal-50'
-                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-50'
+                  ? 'text-teal-800 bg-teal-50 ring-1 ring-teal-200'
+                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-100/80'
               }`}
             >
               Photo Gallery
             </a>
 
-            {/* Patient Guide & TPA */}
+            {/* Cashless TPA */}
             <a
               href="#patient-guide"
               onClick={() => handleNavClick('patient-guide')}
-              className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 text-xs xl:text-sm font-bold rounded-xl transition-all whitespace-nowrap ${
                 activeSection === 'patient-guide'
-                  ? 'text-teal-700 bg-teal-50'
-                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-50'
+                  ? 'text-teal-800 bg-teal-50 ring-1 ring-teal-200'
+                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-100/80'
               }`}
             >
               Cashless TPA
@@ -264,10 +279,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
             <a
               href="#contact"
               onClick={() => handleNavClick('contact')}
-              className={`px-2.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 text-xs xl:text-sm font-bold rounded-xl transition-all whitespace-nowrap ${
                 activeSection === 'contact'
-                  ? 'text-teal-700 bg-teal-50'
-                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-50'
+                  ? 'text-teal-800 bg-teal-50 ring-1 ring-teal-200'
+                  : 'text-slate-700 hover:text-teal-700 hover:bg-slate-100/80'
               }`}
             >
               Contact &amp; Map
@@ -276,12 +291,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
           </nav>
 
           {/* Right Action: Clean Responsive Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             
-            {/* Desktop / Tablet: Book Appointment Button */}
+            {/* Desktop & Tablet: Book Appointment Button */}
             <button
               onClick={() => onOpenAppointment()}
-              className="hidden sm:flex items-center gap-1.5 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 py-2 rounded-xl shadow-sm hover:shadow-md transition-all shrink-0 whitespace-nowrap"
+              className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all shrink-0 whitespace-nowrap"
             >
               <Calendar className="w-4 h-4 shrink-0" />
               <span>Book Appointment</span>
@@ -290,7 +305,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
             {/* Mobile-only Quick Emergency Call Icon */}
             <a
               href={`tel:${HOSPITAL_INFO.helpline}`}
-              className="sm:hidden p-2 rounded-lg bg-red-50 text-red-600 border border-red-200 shrink-0"
+              className="sm:hidden p-2 rounded-xl bg-red-50 text-red-600 border border-red-200 shrink-0"
               title="Call Emergency"
               aria-label="Call Emergency Helpline"
             >
@@ -300,7 +315,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
             {/* Hamburger Menu Toggle (for viewports below lg) */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none shrink-0"
+              className="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none shrink-0 border border-slate-200"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-5 h-5 text-red-600" /> : <Menu className="w-5 h-5" />}
@@ -340,7 +355,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
               { label: "Cancer Center (कीमोथेरेपी / कैंसर सर्जरी)", href: "#cancer-center", id: "cancer-center", badge: "Specialized" },
               { label: "Critical Care (ICU / NICU / वेंटीलेटर)", href: "#critical-care", id: "critical-care", badge: "24/7" },
               { label: "Surgeries & Joint Replacement (दूरबीन आपरेशन)", href: "#surgeries", id: "surgeries" },
-              { label: "Doctors & OPD Schedule", href: "#doctors", id: "doctors" },
+              { label: "Doctors & OPD Schedule (34 विशेषज्ञ)", href: "#doctors", id: "doctors" },
               { label: "Hospital Photo Gallery (चित्र दीर्घा)", href: "#gallery", id: "gallery", badge: "Photos" },
               { label: "North Lucknow Catchment Areas", href: "#catchment", id: "catchment" },
               { label: "Cashless TPA & Visitor Guidelines", href: "#patient-guide", id: "patient-guide" },
