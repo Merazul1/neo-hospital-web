@@ -15,17 +15,18 @@ export const DoctorRoster: React.FC<DoctorRosterProps> = ({ onOpenAppointment })
   const [showBrochureModal, setShowBrochureModal] = useState<boolean>(false);
 
   const categories = [
-    { id: 'all', label: 'All Doctors (सभी 29 विशेषज्ञ)' },
+    { id: 'all', label: 'All Doctors (सभी 34 विशेषज्ञ)' },
     { id: 'cancer', label: 'कैंसर (Oncology & Cancer Surgery)' },
-    { id: 'ortho', label: 'आर्थोपेडिक (Joint Replacement & Ortho)' },
+    { id: 'neuro', label: 'न्यूरो (Neuro Surgery & Brain)' },
+    { id: 'ortho', label: 'ऑर्थोपेडिक (Joint Replacement & Ortho)' },
     { id: 'gastro', label: 'गैस्ट्रोएंटेरोलॉजिस्ट (Gastroenterology)' },
     { id: 'gynecology', label: 'गाइनाकोलॉजिस्ट (Gynecology & Maternity)' },
     { id: 'pediatrics', label: 'बाल रोग (Pediatrics & NICU)' },
+    { id: 'nephro', label: 'नेफ्रोलॉजिस्ट (Kidney & Dialysis)' },
     { id: 'chest', label: 'टी०बी० एण्ड चेस्ट (Pulmonology)' },
     { id: 'urology', label: 'यूरो (Urology & Stone Care)' },
     { id: 'ent', label: 'नाक, कान, गला (ENT)' },
     { id: 'plastic', label: 'प्लास्टिक सर्जरी (Plastic Surgery)' },
-    { id: 'nephro', label: 'नेफ्रोलॉजिस्ट (Kidney & Dialysis)' },
     { id: 'medicine', label: 'मेडिसिन (Internal Medicine & Diabetes)' },
     { id: 'anaesthesia', label: 'एनेस्थेटिक्स (Anaesthesia & ICU)' },
   ];
@@ -55,8 +56,8 @@ export const DoctorRoster: React.FC<DoctorRosterProps> = ({ onOpenAppointment })
             Consult Board-Certified Specialists &amp; Surgeons
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Our multi-disciplinary team of 29 experienced consultants and superspecialists across 
-            12 departments provides evidence-based outpatient and surgical care at Tedhi Pulia, Ring Road, Lucknow.
+            Our multi-disciplinary team of 34 experienced consultants and superspecialists across 
+            13 departments provides evidence-based outpatient and surgical care at Tedhi Pulia, Ring Road, Lucknow.
           </p>
         </div>
 
@@ -69,7 +70,7 @@ export const DoctorRoster: React.FC<DoctorRosterProps> = ({ onOpenAppointment })
               title="Click to view full doctor brochure"
             >
               <img 
-                src="/images/neo-doctors-brochure.jpg" 
+                src="/images/neo-poster-full.jpg" 
                 alt="Official NEO Hospital Doctors & Facilities Brochure" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
@@ -232,12 +233,12 @@ export const DoctorRoster: React.FC<DoctorRosterProps> = ({ onOpenAppointment })
         {filteredDoctors.length === 0 && (
           <div className="text-center py-12 bg-white rounded-3xl border border-slate-200 p-8 space-y-3">
             <p className="text-base font-bold text-slate-700">No doctors match your search: "{searchQuery}"</p>
-            <p className="text-xs text-slate-500">Try searching with a different specialty or clear the filter to see all 29 doctors.</p>
+            <p className="text-xs text-slate-500">Try searching with a different specialty or clear the filter to see all 34 doctors.</p>
             <button
               onClick={() => { setSearchQuery(''); setSelectedCategory('all'); }}
               className="bg-teal-600 text-white text-xs font-bold px-4 py-2 rounded-xl"
             >
-              Show All 29 Doctors
+              Show All 34 Doctors
             </button>
           </div>
         )}
@@ -265,7 +266,7 @@ export const DoctorRoster: React.FC<DoctorRosterProps> = ({ onOpenAppointment })
 
               <div className="rounded-2xl overflow-hidden border border-slate-200">
                 <img 
-                  src="/images/neo-doctors-brochure.jpg" 
+                  src="/images/neo-poster-full.jpg" 
                   alt="NEO Hospital Doctor Pamphlet" 
                   className="w-full h-auto object-contain"
                 />
