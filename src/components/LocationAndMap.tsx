@@ -96,7 +96,7 @@ export const LocationAndMap: React.FC = () => {
                 <li><strong>From Munshipulia / Khurram Nagar:</strong> Follow Ring Road westbound; hospital entrance is easily accessed with clear roadside signage.</li>
               </ul>
 
-              <div className="pt-2">
+              <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <a
                   href="https://maps.google.com/?q=NEO+Hospital+3+Pratap+Nagar+Tedhi+Pulia+Ring+Road+Lucknow"
                   target="_blank"
@@ -104,6 +104,21 @@ export const LocationAndMap: React.FC = () => {
                   className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold text-xs sm:text-sm py-3 rounded-xl transition shadow flex items-center justify-center gap-2"
                 >
                   <Compass className="w-4 h-4" /> Open in Google Maps
+                </a>
+
+                <a
+                  href={HOSPITAL_INFO.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 hover:opacity-95 text-white font-bold text-xs sm:text-sm py-3 rounded-xl transition shadow flex items-center justify-center gap-2"
+                  title="Follow NEO Hospital on Instagram"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <span>Follow @neohospital_</span>
                 </a>
               </div>
             </div>

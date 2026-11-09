@@ -58,8 +58,23 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
             </span>
           </div>
 
-          {/* Right: Quick Emergency Ambulance Hotline */}
-          <div className="flex items-center shrink-0 ml-auto">
+          {/* Right: Instagram & Quick Emergency Ambulance Hotline */}
+          <div className="flex items-center gap-2 shrink-0 ml-auto">
+            <a 
+              href={HOSPITAL_INFO.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-1.5 text-xs text-slate-300 hover:text-white bg-slate-850 hover:bg-slate-800 px-2.5 py-1 rounded-full border border-slate-700/80 hover:border-pink-500/50 transition-all group"
+              title="Follow NEO Hospital on Instagram (@neohospital_)"
+            >
+              <svg className="w-3.5 h-3.5 text-pink-400 group-hover:text-pink-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span className="font-semibold text-[11px] text-pink-300 group-hover:text-white">@neohospital_</span>
+            </a>
+
             <a 
               href={`tel:${HOSPITAL_INFO.helpline}`}
               className="flex items-center gap-1.5 font-bold text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded-full shadow-sm transition text-xs whitespace-nowrap"
@@ -379,8 +394,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
             ))}
           </div>
 
-          {/* Direct OPD CTA in mobile drawer */}
-          <div className="pt-2">
+          {/* Direct OPD CTA & Instagram in mobile drawer */}
+          <div className="pt-2 space-y-2">
             <button
               onClick={() => {
                 onOpenAppointment();
@@ -390,6 +405,25 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
             >
               <Calendar className="w-4 h-4" /> Book OPD / Inpatient Consultation
             </button>
+
+            <a
+              href={HOSPITAL_INFO.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 border border-pink-200 text-slate-800 text-xs font-bold"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <span>Follow on Instagram (@neohospital_)</span>
+              </div>
+              <span className="text-pink-600 font-extrabold">&rarr;</span>
+            </a>
           </div>
 
         </div>

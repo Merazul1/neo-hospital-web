@@ -46,6 +46,34 @@ export const Footer: React.FC = () => {
                 <span><strong>Emergency &amp; ICU:</strong> Open 24 Hours / 365 Days</span>
               </div>
             </div>
+
+            {/* Official Instagram Connect Card */}
+            <a
+              href={HOSPITAL_INFO.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-purple-950/60 via-pink-950/40 to-amber-950/40 border border-pink-500/30 hover:border-pink-500/70 transition-all group shadow-sm"
+              title="Visit Official Instagram Profile"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div>
+                  <span className="text-[10px] text-pink-300 font-bold uppercase tracking-wider block">Official Instagram</span>
+                  <span className="text-xs sm:text-sm font-black text-white group-hover:text-pink-200 transition">
+                    {HOSPITAL_INFO.instagramHandle}
+                  </span>
+                </div>
+              </div>
+              <span className="text-xs font-bold text-pink-300 group-hover:text-white transition flex items-center gap-1">
+                Follow <span>&rarr;</span>
+              </span>
+            </a>
           </div>
 
           {/* Column 2: 15 Core Clinical Facilities (4 cols) */}
@@ -103,7 +131,22 @@ export const Footer: React.FC = () => {
           <div>
             &copy; {new Date().getFullYear()} NEO Hospital. All Rights Reserved. Superspeciality Hospital &amp; Cancer Center, Lucknow.
           </div>
-          <div className="flex items-center gap-4 text-slate-400 text-[11px]">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-3.5 text-slate-400 text-[11px]">
+            <a 
+              href={HOSPITAL_INFO.instagram} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:text-pink-300 transition flex items-center gap-1 font-bold"
+              title="Official Instagram Profile"
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Instagram (@neohospital_)</span>
+            </a>
+            <span>•</span>
             <a href="#gallery" className="hover:text-teal-400 transition">Hospital Photo Gallery</a>
             <span>•</span>
             <span>Privacy Policy</span>
