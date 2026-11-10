@@ -372,6 +372,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, activeSection
               { label: "Surgeries & Joint Replacement (दूरबीन आपरेशन)", href: "#surgeries", id: "surgeries" },
               { label: "Doctors & OPD Schedule (34 विशेषज्ञ)", href: "#doctors", id: "doctors" },
               { label: "Hospital Photo Gallery (चित्र दीर्घा)", href: "#gallery", id: "gallery", badge: "Photos" },
+              { label: "Official Banners & Social Cards (बैनर)", href: "#share-banner", id: "share-banner", badge: "New" },
               { label: "North Lucknow Catchment Areas", href: "#catchment", id: "catchment" },
               { label: "Cashless TPA & Visitor Guidelines", href: "#patient-guide", id: "patient-guide" },
               { label: "Location Map & Directions", href: "#contact", id: "contact" }

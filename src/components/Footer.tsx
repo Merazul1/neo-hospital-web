@@ -149,6 +149,8 @@ export const Footer: React.FC = () => {
             <span>•</span>
             <a href="#gallery" className="hover:text-teal-400 transition">Hospital Photo Gallery</a>
             <span>•</span>
+            <a href="#share-banner" className="hover:text-teal-400 transition">Official Banners</a>
+            <span>•</span>
             <span>Privacy Policy</span>
             <span>•</span>
             <span>Patient Charter</span>

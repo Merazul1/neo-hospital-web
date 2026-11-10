@@ -7,6 +7,7 @@ import { CriticalCareSection } from './components/CriticalCareSection';
 import { OrthopedicShowcase } from './components/OrthopedicShowcase';
 import { DoctorRoster } from './components/DoctorRoster';
 import { PhotoGallery } from './components/PhotoGallery';
+import { ShareableBanner } from './components/ShareableBanner';
 import { LocalCatchmentSilo } from './components/LocalCatchmentSilo';
 import { PatientGuideAndTPA } from './components/PatientGuideAndTPA';
 import { LocationAndMap } from './components/LocationAndMap';
@@ -60,6 +61,9 @@ export const App: React.FC = () => {
 
         {/* Hospital Photo Gallery & Facilities Visual Tour */}
         <PhotoGallery onOpenAppointment={handleOpenAppointment} />
+
+        {/* Official Hospital Banners & Click-to-Redirect Social Media Cards */}
+        <ShareableBanner />
 
         {/* Local Landing Silo: Tedhi Pulia, Ring Road, Aliganj, Jankipuram Catchment */}
         <LocalCatchmentSilo />
